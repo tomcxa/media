@@ -72,10 +72,82 @@
   font-size: 20px;
 }
 
+.form-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(94, 90, 90, 0.2);
+}
+
+.modal-form {
+  width: 360px;
+  border: 2px solid #87cfeb60;
+  border-radius: 10px;
+  background-color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.modal-form h2 {
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 400;
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
+.modal-form input, .modal-form textarea {
+  width: 100%;
+  outline: none;
+  border: 2px solid teal;
+}
+
+.modal-form input:focus, .modal-form textarea:focus {
+  border-color: #7ae0b6;
+}
+
+.modal-form textarea {
+  resize: none;
+  margin-top: 5px;
+}
+
+.helper-text {
+  font-size: 10px;
+}
+
+.invalid {
+  color: rgb(194, 34, 34);
+}
+
+.cancle-btn {
+  background-color: rgb(194, 34, 34);
+}
+
+.modal-form .button-container {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.button-container .button {
+  padding: 10px;
+}
+
 button {
   cursor: pointer;
 }
 
 .hidden {
   display: none;
+}
+
+video {
+  width: 100%;
+  height: auto;
 }

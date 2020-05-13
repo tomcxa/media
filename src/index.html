@@ -13,23 +13,7 @@
 <body>
   <section class='timeline'>
     <div class="timeline-messages">
-      <div class="timeline-card">
-        <div class="time">12/00/98</div>
-        <div class="card-message">
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Commodi aliquid excepturi neque minima fuga, fugit reprehenderit
-            adipisci sunt sit omnis! Fugiat maxime praesentium reiciendis maiores
-            tempore. Non tempora odit porro.
-          </p>
-        </div>
-        <div class="geolocation">
-          <span>51.50851, −0.12572</span>
-          <i class="material-icons">
-            pin_drop
-          </i>
-        </div>
-      </div>
+      
     </div>
     <div class="timeline-controll-panel ">
       <input type="text" class="input timeline-input">
@@ -46,13 +30,13 @@
         </button>
       </div>
       <div class="btn-panel recording-panel hidden">
-        <button class="btn record-audio timeline-btn">
+        <button class="btn record-save timeline-btn">
           <i class="material-icons">
             check
           </i>
         </button>
         <span class="timer">00:00</span>
-        <button class="btn record-video timeline-btn">
+        <button class="btn record-cancle timeline-btn">
           <i class="material-icons">
             delete_forever
           </i>
@@ -60,6 +44,42 @@
       </div>
     </div>
   </section>
+
+  <!-- Forms -->
+  <div class="form-box video-alert hidden">
+    <form class="modal-form">
+      <h2>Что-то пошло не так!</h2>
+      <p>В доступе к записи видео отказано или ваш браузер не поддерживает запись</p>
+      <div class="button-container">
+        <button class="button cancle-btn timeline-btn btn modal-btn" data-type-btn="cancle">
+          Окай...</button>
+      </div>
+    </form>
+  </div>
+  <div class="form-box audio-alert hidden">
+    <form class="modal-form">
+      <h2>Что-то пошло не так!</h2>
+      <p>В доступе к записи аудио отказано или ваш браузер не поддерживает запись</p>
+      <div class="button-container">
+        <button class="button cancle-btn timeline-btn btn modal-btn" data-type-btn="cancle">
+          Окай...</button>
+      </div>
+    </form>
+  </div>
+  <div class="form-box geolocation-alert hidden">
+    <form class="modal-form">
+      <h2>Что-то пошло не так!</h2>
+      <p>Не удалось получить Ваше местоположение. Введите его вручную.</p>
+      <input class="timeline-input" type="text" name="coords">
+      <span class="helper-text">Формат типа 51.50851,−0.12572</span>
+      <div class="button-container">
+        <button class="button timeline-btn cancle-btn" data-type-btn="cancle">
+          Отмена</button>
+        <button class="button timeline-btn success-btn" data-type-btn="save">
+          Подтвердить</button>
+      </div>
+    </form>
+  </div>
 </body>
 
 </html>
