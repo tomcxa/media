@@ -46,6 +46,7 @@ export default class Presenter {
                 if (geo === 'error') {
                     this.showForm(this.forms.geolocationAlert);
                 }
+                this.model.addCard(this.recordContent || content);
                 // this.clearRecords();
             }
 
@@ -72,6 +73,7 @@ export default class Presenter {
                 content.date = new Date().toLocaleString();
                 content.data = value;
                 event.target.value = '';
+                this.model.addCard(this.recordContent || content);
             }
         });
 
