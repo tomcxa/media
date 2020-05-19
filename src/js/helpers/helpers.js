@@ -9,7 +9,8 @@ export function getGeolocation() {
             navigator.geolocation.getCurrentPosition(
                 (position) => {
                     const { latitude, longitude } = position.coords;
-                    resolve(`${latitude} - ${longitude}`);
+                    const textContent = `${latitude},-${longitude}`;
+                    resolve(textContent);
                 }, () => {
                     resolve('error');
                 },
