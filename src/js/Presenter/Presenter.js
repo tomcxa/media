@@ -45,8 +45,9 @@ export default class Presenter {
                 this.recordContent.coords = geo;
                 if (geo === 'error') {
                     this.showForm(this.forms.geolocationAlert);
+                } else {
+                    this.model.addCard(this.recordContent || content);
                 }
-                this.model.addCard(this.recordContent || content);
                 // this.clearRecords();
             }
 
@@ -66,14 +67,15 @@ export default class Presenter {
                 }
                 const geo = await getGeolocation();
                 content.coords = geo;
-                if (geo === 'error') {
-                    this.showForm(this.forms.geolocationAlert);
-                }
                 content.category = 'text';
                 content.date = new Date().toLocaleString();
                 content.data = value;
+                if (geo === 'error') {
+                    this.showForm(this.forms.geolocationAlert);
+                } else {
+                    this.model.addCard(this.recordContent || content);
+                }
                 event.target.value = '';
-                this.model.addCard(this.recordContent || content);
             }
         });
 
